@@ -1,0 +1,36 @@
+body {
+  background: rgb(204,204,204);
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  color: #000;
+}
+div {
+    border-style: hidden;
+}
+.logo, .receipt-hide {
+    display: none;
+}
+table {
+    color: #000;
+}
+@media print {
+    body, page {
+        margin: 0;
+        box-shadow: 0;
+        color: #000;
+        
+    }
+    #print-button, #close-button {
+        display: none;
+    }
+    .boxed.boxed--border {
+        border: 1px solid #fff;
+    }
+
+    }
+}

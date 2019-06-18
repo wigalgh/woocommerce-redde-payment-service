@@ -1,0 +1,247 @@
+.mmi,
+.m,
+.at,
+.v {
+    display: none
+}
+
+.sm {
+    color: #19a316
+}
+
+.em {
+    color: #db2d0a
+}
+
+.list {
+    display: block;
+    margin-left: 20px;
+    font-size: .9em
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.mgt--60 {
+    margin-top: -60px
+}
+
+.mgt--80 {
+    margin-top: -80px
+}
+
+.img-50 {
+    width: 50%
+}
+
+.img-50 {
+    width: 60%
+}
+
+div.r-o {
+    opacity: 1;
+    background: grey;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed
+}
+
+div.dmmi {
+    color: white;
+    margin-top: 420px;
+    z-index: 19999;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 690px;
+    height: 300px
+}
+
+div p.typing-white {
+    color: white;
+    letter-spacing: 3px;
+    line-height: .9em;
+    font-weight: 700;
+    text-align: left;
+    text-shadow: 2px 0 #000;
+    z-index: 19999
+}
+
+div p.typing-red {
+    color: red;
+    letter-spacing: 3px;
+    line-height: .9em;
+    font-weight: 700;
+    text-align: left;
+    text-shadow: 2px 0 #000;
+    z-index: 19999
+}
+
+.s-o {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 50%;
+    margin-left: -100px;
+    top: 50%;
+    margin-top: -30px;
+    color: #fff;
+    text-align: center
+}
+
+.mm-at {
+    border-radius: 7px;
+    border-top: 2px solid rgba(239, 51, 9, 1);
+    border-left: 2px solid rgba(239, 51, 9, 1);
+    border-right: 2px solid rgba(1, 64, 165, 1);
+    border-bottom: 2px solid rgba(1, 64, 165, 1);
+    animation: shadow-pulse-red-blue 1s infinite;
+    box-shadow: 0 0 5px rgba(1, 64, 165, 1)
+}
+
+.mm-m {
+    border-radius: 7px;
+    border: 2px solid #ffeb19;
+    animation: shadow-pulse-yellow 1s infinite;
+    box-shadow: 0 0 5px rgba(255, 235, 25, 1)
+}
+
+.mm-v {
+    border-radius: 7px;
+    border: 2px solid #ef3309;
+    animation: shadow-pulse-red 1s infinite;
+    box-shadow: 0 0 5px rgba(239, 51, 9, 1)
+}
+
+@keyframes shadow-pulse-red-blue {
+    0% {
+        box-shadow: 0 0 0 0 rgba(1, 64, 165, 1)
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0)
+    }
+}
+
+@keyframes shadow-pulse-yellow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 235, 25, 1, .9)
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0)
+    }
+}
+
+@keyframes shadow-pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 51, 9, .9)
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0)
+    }
+}
+
+#n-f-s {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.1s linear;
+    opacity: 0;
+    height: 100vh;
+    transform: scale(10);
+    z-index: -1;
+    background: #fff
+}
+
+.n-f-s #n-f-s {
+    z-index: 9999;
+    opacity: .5;
+    transform: scale(1)
+}
+
+#n-f-s > div > div {
+    animation-play-state: paused;
+    border: 5px solid rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    border-left-color: rgba(0, 0, 0, .4);
+    width: 100%;
+    height: 100%
+}
+
+#n-f-s > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2000px #000;
+    width: 100px;
+    height: 100px;
+    padding: 5px
+}
+
+.n-f-s #n-f-s div div {
+    animation-play-state: running
+}
+
+@keyframes lico {
+    0% {
+        transform: scale(0) translate3d(0, 0, 0)
+    }
+
+    11% {
+        transform: scale(1.2) translate3d(0, 0, 0)
+    }
+
+    22% {
+        transform: scale(1) translate3d(0, 0, 0)
+    }
+
+    33% {
+        transform: scale(0) translate3d(0, 0, 0)
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.n-f-s #n-f-s i {
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    line-height: 1;
+    transform: scale(0) translate3d(0, 0, 0)
+}
+
+.n-f-s #n-f-s i:nth-of-type(1) {
+    animation: lico 3s infinite ease-in-out
+}
+
+.n-f-s #n-f-s i:nth-of-type(2) {
+    animation: lico 3s 1s infinite ease-in-out
+}
+
+.n-f-s #n-f-s i:nth-of-type(3) {
+    animation: lico 3s 2s infinite ease-in-out
+}

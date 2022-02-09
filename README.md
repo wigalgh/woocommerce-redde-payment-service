@@ -19,7 +19,7 @@ For more information on documentation go to [developers.reddeonline.com](https:/
  * [Examples](#examples)
  
 # Installation
-------------
+---------------------
 
 To use this library you'll need to have [created a Redde account](https://app.reddeonline.com/register). 
 
@@ -45,13 +45,14 @@ You will see the settings options needed to setup on Redde.
 * ApiKey : App Key given to you by Wigal Team
 * Description : Description for items that are purchased from your store
 * Merchant Name : Your Company Name
-* Merchant Logo : Your Company / Store Logo. It should be a url. 
+* Merchant Logo : Your Company / Store Logo. It should be a url
+* Success URL : A Url to point user when payment is successful
+* Merchant Name : A Url to point user when payment fails
 
 When done save changes to apply to Redde. Easy peasy
 
 
 :::: Screenshot here ::::
-
 
 
 # License

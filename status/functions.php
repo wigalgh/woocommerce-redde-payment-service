@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Author: Kwame Oteng Appiah-Nti
- * Author URI: http://twitter.com/akonic2
- * Author Email: developerkwame@gmail.com
+ * Author URI: http://twitter.com/developerkwame
+ * Author Email: koteng@wigal.com.gh
  * 
  * Redde Functions:
  * Functions to assist plugin

@@ -1,7 +1,16 @@
 <?php
+
+/**
+ * Author: Kwame Oteng Appiah-Nti
+ * Author URI: http://twitter.com/developerkwame
+ * Author Email: koteng@wigal.com.gh
+ * 
+ * Redde Functions:
+ * Functions to assist plugin
+ */
+
 /**
 * Redde Checkout Status
-*
 */
 require_once 'functions.php';
 init_session();

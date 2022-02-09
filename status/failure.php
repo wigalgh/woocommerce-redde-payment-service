@@ -1,31 +1,41 @@
 <?php
+
 /**
-* Redde Checkout Status
-*
-*/
+ * Author: Kwame Oteng Appiah-Nti
+ * Author URI: http://twitter.com/developerkwame
+ * Author Email: koteng@wigal.com.gh
+ * 
+ * Redde Functions:
+ * Functions to assist plugin
+ */
+
+/**
+ * Redde Checkout Status
+ */
 require_once 'functions.php';
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__)))))."/wp-config.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/wp-config.php");
 $wp->init();
 $wp->register_globals();
 init_session();
 @error_reporting(0);
 global $woocommerce;
-$order = wc_get_order( $_SESSION['redde_order_id'] );
+$order = wc_get_order($_SESSION['redde_order_id']);
 wc_reduce_stock_levels($_SESSION['redde_order_id']);
 $order->add_order_note('Payment failed ');
 $order->update_status('failed');
-if(isset($_SESSION['redde_payload']) && isset($_SESSION['redde_order_id']) && isset($_SESSION['redde_checkout_response'])) {
+if (isset($_SESSION['redde_payload']) && isset($_SESSION['redde_order_id']) && isset($_SESSION['redde_checkout_response'])) {
 ?>
-<!doctype html>
-<html lang="en">
+    <!doctype html>
+    <html lang="en">
+
     <head>
         <meta charset="utf-8">
         <title><?= get_bloginfo('name'); ?> Checkout Status</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8"/>
+        <meta charset="utf-8" />
         <meta name="robots" content="noindex,nofollow" />
-        <meta name="robots" content="nofollow"/>
-        <meta http-equiv="cache-control" content="no-cache"/>
+        <meta name="robots" content="nofollow" />
+        <meta http-equiv="cache-control" content="no-cache" />
         <meta name="description" content="Redde Payment Status">
         <meta name="copyright" content="Wigal Solutions" />
         <link rel="icon" type="image/x-icon" href="../assets/images/redde-ico.png">
@@ -60,24 +70,28 @@ if(isset($_SESSION['redde_payload']) && isset($_SESSION['redde_order_id']) && is
             <section class="mgt--60">
                 <div class="container">
                     <div class="row" id="mb">
-                        <div  class="col-md-9 center-block">
+                        <div class="col-md-9 center-block">
                             <div class="boxed boxed--lg boxed--border">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="pricing pricing-3 text-center">
                                             <div class="pricing__head bg--secondary boxed">
                                                 <img class="img-80" alt="Image" class="logo" src="<?php echo $_SESSION['redde_payload']['logolink']; ?>" width="20%" />
-                                                <strong><h1 id="emd" class="em">Error !! Payment Not Processed</h1></strong>
+                                                <strong>
+                                                    <h1 id="emd" class="em">Error !! Payment Not Processed</h1>
+                                                </strong>
                                                 <a style="margin-top: 30px;" class="btn bg--googleplus btn--icon" href="<?= get_site_url(); ?>">
                                                     <span class="btn__text"><i class="fa fa-arrow-right"></i>Return to Main Page</span>
                                                 </a>
                                             </div>
-                                        </div><!--end message -->
+                                        </div>
+                                        <!--end message -->
                                     </div>
                                 </div>
                             </div><!-- row here -->
                         </div>
-                    </div><!--end of message row-->
+                    </div>
+                    <!--end of message row-->
                 </div>
                 <!--end of container-->
             </section>
@@ -101,12 +115,13 @@ if(isset($_SESSION['redde_payload']) && isset($_SESSION['redde_order_id']) && is
         <script src="../assets/js/jquery-3.1.1.min.js"></script>
         <script src="../assets/js/redde-checkout-status.js"></script>
     </body>
-</html>			
-<?php  
-	remove_session(array('redde_payload', 'redde_order_id', 'redde_checkout_response'));
-} 
-else {
-	header('HTTP/1.0 404 Not Found'); exit;
-} 
+
+    </html>
+<?php
+    remove_session(array('redde_payload', 'redde_order_id', 'redde_checkout_response'));
+} else {
+    header('HTTP/1.0 404 Not Found');
+    exit;
+}
 
 ?>
